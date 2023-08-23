@@ -41,6 +41,10 @@ struct DetailView: View {
             
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
+            
+            Text("Added on \(book.date?.formatted() ?? Date.now.formatted())")
+                .padding(.top, 200)
+                .foregroundColor(.secondary)
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)
